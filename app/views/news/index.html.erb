@@ -1,0 +1,9 @@
+<%= @news.first(10).each do |new| %>
+  <h1><%= new.titulo %></h1>
+  <div>
+    <%= new.bajada%>
+  </div>
+  <div>
+    <%= new.cuerpo%>
+  </div>
+<%end%>
