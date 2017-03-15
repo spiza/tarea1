@@ -5,3 +5,10 @@
 <div>
   <%= @new.cuerpo%>
 </div>
+<div>
+<% @new.comments.each do |comment| %>
+  <div>
+    <%= comment.Autor%>
+    <%= comment.Contenido%>
+  </div>
+<%end%>

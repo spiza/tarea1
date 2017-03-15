@@ -6,6 +6,7 @@ class NewsController < ApplicationController
   #GET /news/:id
   def show
     @new = New.find(params[:id])
+    #@comment = Comment.find(params[:new_id])
   end
   #GET /news/new
   def new
