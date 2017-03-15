@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @notice.titulo %>
+</p>
+
+<p>
+  <strong>Bajada:</strong>
+  <%= @notice.bajada %>
+</p>
+
+<p>
+  <strong>Cuerpo:</strong>
+  <%= @notice.cuerpo %>
+</p>
+<p>
+  <strong>Hora</strong>
+  <%= @notice.created_at %>
+</p>
+<% @notice.comentarios.each do |comment| %>
+  <div>
+    <strong>Autor:</strong>
+    <%= comment.autor%>
+  </div>
+  <div>
+    <strong>Comentario:</strong>
+    <%= comment.contenido%>
+  </div>
+<%end%>
+
+
+<%= link_to 'Agregar Comentario', new_comentario_path %>
+<%= link_to 'Back', notices_path %>

@@ -15,23 +15,21 @@
   </thead>
 
   <tbody>
-    <% @notices.reverse.first(10).each do |notice| %>
+    <% @notices.each do |notice| %>
       <tr>
         <td><%= notice.titulo %></td>
         <td><%= notice.bajada %></td>
-        <% editable = notice.cuerpo%>
-        <% if editable.length > 1000 %>
-                    <% editable = editable[0..1000] %>
-                    <% index = editable.rindex(' ') %>
-                    <% editable = editable[0..index] + "..." %>
-        <%end%>
-        <td><%= editable %></td>
+        <td><%= notice.cuerpo %></td>
         <td><%= notice.comentarios.count %></td>
         <td><%= notice.created_at %></td>
         <td><%= link_to 'Show', notice %></td>
+        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+<%= link_to 'New Notice', new_notice_path %>

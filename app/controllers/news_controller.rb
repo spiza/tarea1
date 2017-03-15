@@ -6,7 +6,6 @@ class NewsController < ApplicationController
   #GET /news/:id
   def show
     @new = New.find(params[:id])
-    #@comment = Comment.find(params[:new_id])
   end
   #GET /news/new
   def new
@@ -17,5 +16,8 @@ class NewsController < ApplicationController
     @new = New.new(titulo: params[:new][:titulo], bajada: params[:new][:bajada], cuerpo: params[:new][:cuerpo])
     @new.save
     redirect_to @new
+  end
+  def edit
+    @new = New.find(params[:id])
   end
 end
