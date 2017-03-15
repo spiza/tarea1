@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @notices.each do |notice| %>
+    <% @notices.reverse.each do |notice| %>
       <tr>
         <td><%= notice.titulo %></td>
         <td><%= notice.bajada %></td>

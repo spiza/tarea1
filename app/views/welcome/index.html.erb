@@ -22,8 +22,8 @@
         <% editable = notice.cuerpo%>
         <% if editable.length > 1000 %>
                     <% editable = editable[0..1000] %>
-                    <% index = editable.rindex(' ') %>
-                    <% editable = editable[0..index] + "..." %>
+                    <% indice = editable.rindex(' ') %>
+                    <% editable = editable[0..indice] + "..." %>
         <%end%>
         <td><%= editable %></td>
         <td><%= notice.comentarios.count %></td>
